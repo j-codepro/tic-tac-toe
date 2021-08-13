@@ -2,9 +2,28 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Chewy', Arial, Helvetica, sans-serif;
+}
+
 :root {
     --cell-size: 100px;
     --mark-size: calc(var(--cell-size) * .9); /* make the mark smaller than the cell  */
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 800;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: rgb(199, 50, 50);
+    background-color: rgb(238, 238, 238);
+
+}
+
+h1 span {
+    color: rgb(57, 172, 57);
 }
 
 main {
@@ -14,7 +33,7 @@ main {
     justify-content: center;
     align-content: center;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .players {
@@ -23,7 +42,6 @@ main {
     font-size: 28px;
     color: rgb(82, 82, 82);
     font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .player1 {
@@ -56,7 +74,7 @@ main {
     justify-items: center;
     align-items: center; /* the 0/X */
     grid-template-columns: repeat(3, auto);
-    margin-top: 90px;
+    margin-top: 70px;
 }
 
 .cell {
@@ -161,25 +179,45 @@ main {
     align-items: center;
     color: white;
     font-size: 4rem;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
+    text-transform: uppercase;
 }
 
 .display-result button {
     font-size: 2rem;
+    font-weight: 600;
     background-color: white;
-    border: 1px solid black;
-    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 40px;
     cursor: pointer;
     margin-left: 20px;
+    transition: all .3s;
+    color: rgb(77, 77, 77);
 }
 
 .display-result button:hover {
-    background-color: black;
+    background-color: rgb(49, 49, 49);
     color: white;
-    border-color: white;
+    text-align: center;
 }
 
 .display-result.show {
     display: flex;
+    flex-direction: column;
+}
+
+.winning-text {
+    text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+    .player1 {
+     margin-right: 15px;
+    }
+
+    .player2 {
+        margin-left: 15px;
+    }
 }
