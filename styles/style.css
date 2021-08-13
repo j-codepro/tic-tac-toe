@@ -7,21 +7,62 @@
     --mark-size: calc(var(--cell-size) * .9); /* make the mark smaller than the cell  */
 }
 
-.board {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.players {
+    display: flex;
+    flex-direction: row;
+    font-size: 28px;
+    color: rgb(82, 82, 82);
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.player1 {
+    margin-right: 300px;
+}
+
+.player2 {
+    margin-left: 300px;
+}
+
+.score1 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(199, 50, 50);
+}
+
+.score2 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(57, 172, 57);
+}
+
+.board {
+    width: 100vw;
+    height: 300px;
+    display: grid;
+    justify-content: center;
     justify-items: center;
     align-items: center; /* the 0/X */
     grid-template-columns: repeat(3, auto);
+    margin-top: 90px;
 }
 
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
-    border: 1px solid black;
+    border: 2px solid rgb(63, 63, 63);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,10 +91,13 @@
 }
 
 .cell.x::before,
-.cell.x::after,
+.cell.x::after {
+    background-color: rgb(199, 50, 50);
+}
+
 .cell.circle::before,
 .cell.circle::after {
-    background-color: black;
+    background-color: rgb(57, 172, 57);
 }
 
 .board.x .cell:not(.x):not(.circle):hover::before,
@@ -117,6 +161,8 @@
     align-items: center;
     color: white;
     font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
 }
 
 .display-result button {
