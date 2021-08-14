@@ -1,5 +1,6 @@
 *, *::after, *::before {
     box-sizing: border-box;
+    font-family: 'Chewy', Arial, Helvetica, sans-serif;
 }
 
 body {
